@@ -2,15 +2,15 @@
 @media (prefers-color-scheme: dark) { :root { --bg: #0f1311; --surface: #171c19; --text: #f3f6f4; --muted: #a5b0a8; --primary: #9ac0a5; --primary-soft: #1d3023; --border: #2a332d; } }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+body { margin: 0; overflow-wrap: break-word; background: var(--bg); color: var(--text); font: 17px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 a { color: var(--primary); text-underline-offset: 2px; }
 header.site { border-bottom: 1px solid var(--border); background: var(--surface); }
 header.site .inner, main, footer { max-width: 760px; margin: 0 auto; padding: 0 20px; }
 header.site .inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.2rem; color: var(--text); text-decoration: none; letter-spacing: -.02em; }
 .brand img { width: 34px; height: 34px; border-radius: 9px; }
-nav.site a { margin-left: 14px; font-size: .95rem; white-space: nowrap; }
-nav.site a:first-child { margin-left: 0; }
+nav.site { display: flex; flex-wrap: wrap; gap: 4px 14px; padding-bottom: 6px; }
+nav.site a { font-size: .95rem; white-space: nowrap; }
 main { padding-top: 28px; padding-bottom: 40px; }
 h1 { font-size: 2rem; line-height: 1.2; letter-spacing: -.02em; margin: .2em 0 .3em; }
 h2 { font-size: 1.25rem; margin: 1.8em 0 .4em; }
