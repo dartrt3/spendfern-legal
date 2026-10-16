@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete your account · Spendfern</title>
+<meta name="description" content="How to delete your Spendfern account and data, in the app or outside it.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="site"><div class="inner">
+<a class="brand" href="../"><img src="../assets/spendfern-icon-512.png" alt="">Spendfern</a>
+<nav class="site" aria-label="Site"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="../support/">Support</a><a href="../delete-account/">Delete account</a></nav>
+</div></header>
+<main>
+<h1>Delete your Spendfern account</h1>
+<p>This page explains how to permanently delete your <strong>Spendfern</strong> account (Android app <code>app.spendfern</code>) and the data linked to it.</p>
+
+<div class="card">
+<h2 style="margin-top:0">Option 1: in the app</h2>
+<p>Open Spendfern, go to Settings or Plan &amp; account, and tap <strong>Delete account</strong>. Deletion is immediate.</p>
+</div>
+
+<div class="card">
+<h2 style="margin-top:0">Option 2: by email, without the app</h2>
+<ol>
+<li>Send an email <strong>from the email address of your Spendfern account</strong> to <a href="mailto:spendfern@gmail.com?subject=Spendfern%20account%20deletion%20request">spendfern@gmail.com</a> with the subject <strong>Spendfern account deletion request</strong>.</li>
+<li>Say that you want your Spendfern account permanently deleted.</li>
+<li>We may ask a short question to confirm that you own the account before we delete it.</li>
+</ol>
+<p><a class="button" href="mailto:spendfern@gmail.com?subject=Spendfern%20account%20deletion%20request">Email a deletion request</a></p>
+<p class="muted">We aim to complete email requests within 30 days. We will reply when it is done.</p>
+</div>
+
+<div class="callout"><strong>Subscriptions:</strong> deleting your account does not cancel a Google Play subscription. Cancel it in <a href="https://play.google.com/store/account/subscriptions">Google Play subscriptions</a> first.</div>
+
+<h2>What is deleted</h2>
+<ul>
+<li>Your account: email address, password hash and verification status.</li>
+<li>All transactions, receipt items, discounts, categories and learned category choices.</li>
+<li>Your AI usage records and pending rewarded-ad tokens.</li>
+<li>Your RevenueCat customer record. We send the deletion request to RevenueCat.</li>
+</ul>
+<p>Receipt photos are never stored, so there are none to delete.</p>
+
+<h2>What is kept, and for how long</h2>
+<ul>
+<li><strong>Abuse-prevention records:</strong> scan-ledger and rewarded-ad entries for the current UTC month. They hold a keyed hash of your email, not the email itself, plus Google ad transaction IDs. They are no longer linked to your account and are deleted after the month ends. This stops deleting and re-registering from resetting the limits.</li>
+<li><strong>Billing retry:</strong> if RevenueCat cannot be reached, we keep only your account ID to retry the RevenueCat deletion until it succeeds.</li>
+<li><strong>Backups:</strong> deleted data may remain in database backups until they expire, normally within 30 days.</li>
+<li><strong>Request logs:</strong> up to 5 days.</li>
+</ul>
+<p>Google Play purchase records, and data Google's ads and integrity services collect, are kept by Google under its own policies.</p>
+<p>Questions: <a href="mailto:spendfern@gmail.com">spendfern@gmail.com</a> · <a href="../privacy/">Privacy policy</a></p>
+</main>
+<footer>Spendfern · Contact <a href="mailto:spendfern@gmail.com">spendfern@gmail.com</a></footer>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy · Spendfern</title>
+<meta name="description" content="How Spendfern collects, uses, shares and deletes your information.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="site"><div class="inner">
+<a class="brand" href="../"><img src="../assets/spendfern-icon-512.png" alt="">Spendfern</a>
+<nav class="site" aria-label="Site"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="../support/">Support</a><a href="../delete-account/">Delete account</a></nav>
+</div></header>
+<main>
+<h1>Privacy policy</h1>
+<p class="updated">Last updated 16 October 2026</p>
+<p>This policy explains what information the Spendfern Android app and its server collect, why, who receives it, how long it is kept, and how you can delete it. Spendfern is developed and operated by the individual developer listed as the developer of Spendfern on Google Play ("we", "us"). Contact: <a href="mailto:spendfern@gmail.com">spendfern@gmail.com</a>.</p>
+
+<div class="callout">
+<strong>In short</strong>
+<ul>
+<li>We store your account email and the expenses, income and categories you save, so the app works on your account.</li>
+<li>Receipt photos you choose to scan are cleaned of metadata, analysed to suggest the details, and not stored by Spendfern.</li>
+<li>On the Free plan you can unlock a receipt scan by choosing to watch a rewarded ad from Google AdMob. Google's ads SDK collects device and usage data for advertising.</li>
+<li>Subscriptions are paid through Google Play. RevenueCat tells our server whether your account has Spendfern Pro.</li>
+<li>We do not sell your personal information, connect to your bank, or use your financial records for advertising.</li>
+<li>You can delete your account in the app or by email.</li>
+</ul>
+</div>
+
+<h2>1. Information we collect and how we use it</h2>
+
+<h3>Account</h3>
+<p>Your email address and password (stored only as a one-way hash), whether your email is verified, an account ID, and creation and update times. We use them to create and secure your account, sign you in, send verification and password-reset emails, and process deletion. After you sign in, the app keeps a session token on your device for up to 7 days.</p>
+
+<h3>Your expense records</h3>
+<p>The transactions you save (amount, currency, merchant or source name, date, category, optional note, and whether it is an expense or income), the categories you create, edit or archive, and, for scanned receipts you confirm, the line items, quantities, prices, discounts and check results. When you move an item to a different category, we remember that choice for your account so similar items are categorised the same way. We use these records only to provide the app: history, categories and monthly summaries. Spendfern does not connect to bank accounts and does not move money.</p>
+
+<h3>Receipt photos (only when you scan)</h3>
+<p>When you scan a receipt, the app sends the photo to our server over HTTPS. The server checks it, removes all embedded metadata (including any location data), resizes and re-encodes it, and sends that cleaned image with fixed instructions to Google's Gemini API to read the shop, date, items and totals. The photo is held in memory only while the request is processed. It is not written to our database or file storage, and we do not keep it. Your account email and account ID are not sent to Gemini. The app also calculates a fingerprint (SHA-256 hash) of the photo so the integrity check below covers that exact photo. The suggestion is shown to you for review, and nothing is saved until you confirm it.</p>
+<p>We use the Gemini API under Google's paid-service terms. Google states that for paid services it does not use prompts or responses to improve its products, and that it keeps them for a limited period (currently stated as 55 days) to detect policy violations and for legally required disclosures. See the <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>.</p>
+
+<h3>Scan usage and abuse prevention</h3>
+<p>For each AI request we record your account ID, the AI provider and model, the request type, processing time, token counts, an estimated cost, and whether it succeeded. These records are deleted with your account. To enforce monthly scan allowances and prevent abuse, we also keep a scan ledger. It holds a keyed hash of your normalised email address (not the email itself), your plan, a request key, the UTC day and month, and the result. Ledger entries are deleted after the UTC month ends. They are kept until then even if you delete your account, so deleting and re-registering cannot reset the limits.</p>
+
+<h3>Rewarded ads</h3>
+<p>When you choose to watch a rewarded ad, our server creates a random one-time token linked to your account. It expires after 15 minutes. The app passes this token to Google as server-side verification data; it does not contain your email or account ID. When you finish the ad, Google sends our server a signed confirmation with a transaction ID. We then record one scan credit with that transaction ID, the keyed hash of your email, the UTC day and month, and the credit's status (ready, reserved or spent). Spent credits are deleted after their month ends. Unused credits stay until you use them or delete your account. When you delete your account, we delete your pending tokens and unlink your credits from your account. We keep only the transaction IDs and the keyed history needed for the current month's limits, until the regular cleanup removes them.</p>
+
+<h3>Advertising: Google AdMob and User Messaging Platform</h3>
+<p>The app includes the Google Mobile Ads SDK to show the rewarded ads you choose to watch. Google states that this SDK automatically collects and shares the following for advertising, analytics and fraud prevention:</p>
+<ul>
+<li>your IP address, which may be used to estimate your general location;</li>
+<li>app interactions such as ad views and taps;</li>
+<li>diagnostic information;</li>
+<li>device identifiers such as the Android advertising ID and app set ID.</li>
+</ul>
+<p>Where the law requires it, for example in the EEA, the UK and Switzerland, Google's User Messaging Platform asks for your consent before personalised ads. When it applies, you can change your choice at any time under <em>Ad privacy choices</em> in the app's Plan &amp; account screen. You can also reset or delete your advertising ID in Android settings. We limit ads to content suitable for teens and older. Learn more in <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>.</p>
+
+<h3>Subscriptions: Google Play and RevenueCat</h3>
+<p>Spendfern Pro is purchased through Google Play Billing. Google processes your payment, and we never receive your card details. We use RevenueCat to manage subscriptions. Your Spendfern account ID is your RevenueCat customer ID. RevenueCat receives purchase information (product, purchase and renewal dates, status, store and country or currency) from the app and Google Play, and our server asks RevenueCat whether your account has the "pro" entitlement. When you delete your account, we ask RevenueCat to delete your customer record.</p>
+
+<h3>App integrity: Google Play Integrity</h3>
+<p>Before a receipt scan, the app asks Google Play's Integrity API for a verdict linked to that specific request. Our server sends the resulting token to Google to decode it, and checks that the request comes from the genuine Spendfern app installed from Google Play on a device that passes Google's integrity checks. This protects the paid AI service from abuse. We do not store the verdict after the request. Google processes data for this check, such as app details, licence status and device attestation, under the <a href="https://developer.android.com/google/play/integrity/terms">Play Integrity API terms</a>.</p>
+
+<h3>Server, security and logs</h3>
+<p>Our server's operational logs record each request's endpoint, status, duration and a random request ID, without your IP address or account. Our database's built-in request log records the request method, path, status, IP address and browser or app user agent for up to 5 days, for security and troubleshooting. Our hosting provider may keep its own network logs. To limit abuse, the server keeps short-lived counters per IP address in memory.</p>
+
+<h3>Emails and support</h3>
+<p>Verification and password-reset emails are sent through our email provider. If you email <a href="mailto:spendfern@gmail.com">spendfern@gmail.com</a>, we use your message and address to help you.</p>
+
+<h3>Device permissions</h3>
+<p>The app uses the internet connection. It uses the camera or your photos only when you choose to take or pick a receipt photo, through Android's own camera and photo picker. It does not request access to your contacts or precise location.</p>
+
+<h2>2. Who receives information</h2>
+<div class="table-wrap"><table>
+<tr><th>Recipient</th><th>What and why</th></tr>
+<tr><td>Google: Gemini API</td><td>Cleaned receipt image and fixed instructions, to extract receipt details</td></tr>
+<tr><td>Google: Play Billing and Play Integrity</td><td>Purchase processing and app/device integrity checks for scans</td></tr>
+<tr><td>Google: AdMob and User Messaging Platform</td><td>Rewarded ads, ad measurement, fraud prevention and consent. Google may use this data for its own advertising purposes as described in its policies.</td></tr>
+<tr><td>RevenueCat, Inc.</td><td>Subscription status and purchase history linked to your account ID</td></tr>
+<tr><td>Our cloud hosting provider</td><td>Runs our server and stores our database and backups</td></tr>
+<tr><td>Our email provider</td><td>Delivers verification and password-reset emails</td></tr>
+<tr><td>Authorities</td><td>Only when the law requires it</td></tr>
+</table></div>
+<p>We do not sell your personal information. We do not share your expense records with advertisers.</p>
+
+<h2>3. Legal bases (EEA, UK and similar laws)</h2>
+<p>We process your information:</p>
+<ul>
+<li>to provide the service you asked for (contract);</li>
+<li>for our legitimate interests in keeping the service secure, preventing abuse and controlling costs;</li>
+<li>with your consent where it is required, such as personalised ads;</li>
+<li>to meet legal obligations.</li>
+</ul>
+
+<h2>4. International processing</h2>
+<p>Our providers may process information in countries other than yours, including the United States. Where the law requires it, we rely on the safeguards these providers offer.</p>
+
+<h2>5. How long we keep information</h2>
+<ul>
+<li><strong>Account and expense records:</strong> until you delete them or your account. A deleted transaction is removed from the database immediately.</li>
+<li><strong>Scan ledger and rewarded-ad history:</strong> until the end of the UTC month, then deleted by a daily cleanup.</li>
+<li><strong>Unused rewarded credits:</strong> until used or until you delete your account.</li>
+<li><strong>Billing deletion:</strong> if RevenueCat is unavailable when you delete your account, we keep only your account ID to retry the RevenueCat deletion every 15 minutes until it succeeds.</li>
+<li><strong>Request logs:</strong> up to 5 days.</li>
+<li><strong>Backups:</strong> database backups may contain deleted information until they expire, normally within 30 days.</li>
+<li><strong>Support emails:</strong> as long as needed to handle your request.</li>
+</ul>
+<p>Google and RevenueCat keep information under their own policies.</p>
+
+<h2>6. Your choices and rights</h2>
+<ul>
+<li>Delete individual transactions in the app at any time.</li>
+<li>Delete your account and records in the app (Settings or Plan &amp; account, then <em>Delete account</em>), or see <a href="../delete-account/">Delete your account</a> for other ways.</li>
+<li>Email us to request a copy of your information or to correct it.</li>
+<li>Change your ad consent under <em>Ad privacy choices</em> when it is shown, and reset your advertising ID in Android settings.</li>
+</ul>
+<p>Depending on where you live, you may have rights to access, correct, delete, restrict or object to processing, to data portability, and to withdraw consent. You may also be able to complain to your data protection authority. Contact <a href="mailto:spendfern@gmail.com">spendfern@gmail.com</a>. We aim to reply within 30 days.</p>
+
+<h2>7. Age</h2>
+<p>Spendfern is intended for adults aged 18 and over and is not directed at children. If you believe a child has created an account, contact us and we will delete it.</p>
+
+<h2>8. Security</h2>
+<p>We protect your information as follows:</p>
+<ul>
+<li>All connections between the app and our server use HTTPS.</li>
+<li>Passwords are stored as one-way hashes.</li>
+<li>Server administration is not exposed to the internet.</li>
+<li>Requests are rate-limited, and scans require an app integrity check.</li>
+</ul>
+<p>No system is perfectly secure.</p>
+
+<h2>9. Changes</h2>
+<p>If this policy changes, we will update this page and the date above. If a change is significant, we will tell you in the app or by email.</p>
+</main>
+<footer>Spendfern · Contact <a href="mailto:spendfern@gmail.com">spendfern@gmail.com</a></footer>
+</body>
+</html>
